@@ -1,0 +1,29 @@
+# Alex Abian — Photography
+> Dubai-based photographer: architectural, hospitality, editorial.
+
+## About
+Alex Abian is a photographer based in Dubai, UAE, specialising in architectural photography, hospitality photography (luxury hotels, resorts), editorial photography, and commercial photography. Trilingual: English, Spanish, Japanese. Previously based in Tokyo. Available worldwide.
+
+## Services
+- Architectural Photography — exterior, interior, aerial
+- Hospitality Photography — hotel rooms, suites, spas, F&B, lifestyle
+- Editorial Photography — brand campaigns, documentary
+- Commercial Photography — product, corporate, advertising
+- Video Production — cinematic, commercial, brand films
+
+## Products
+- **Desert Presets** (Lightroom) — $29 — warm earth tones, architecture
+- **Cinema Presets** (Lightroom) — $34 — editorial colour grading
+- **Monochrome Presets** (Lightroom) — $24 — high-contrast B&W
+- **Rec709 Cine-Grade LUTs** (DaVinci Resolve) — $39 — Pocket 4K/6K
+- **Film Emulation LUTs** (DaVinci Resolve) — $49 — Kodak/Fuji emulation
+- **Commercial LUTs** (DaVinci Resolve) — $44 — commercial colour grading
+
+## Contact
+- Email: hello@alexabian.com
+- Instagram: @alexabian
+- Main portfolio: https://alexabian.com
+- Store: https://portfolio.estructura.studio
+
+## SEO Keywords
+Dubai photographer, architectural photographer Dubai, hotel photographer Dubai, hospitality photography UAE, commercial photographer GCC, Lightroom presets, DaVinci Resolve LUTs, BMPCC4K LUTs, Dubai photography services

@@ -3,281 +3,381 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Abian — Photography</title>
-  <meta name="description" content="Dubai-based photographer — ten images. Lightroom presets and cinematic LUTs for architecture, editorial, and commercial work." />
+  <title>Alex Abian — Dubai Photographer: Architecture, Hospitality & Editorial</title>
+  <meta name="description" content="Dubai-based photographer for luxury hotels, architecture firms, and editorial clients across the GCC. Lightroom presets and cinematic LUTs for professionals." />
   <link rel="canonical" href="https://portfolio.estructura.studio/" />
+  <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alex Abian — Photography" />
+  <meta property="og:title" content="Alex Abian — Dubai Photographer" />
+  <meta property="og:description" content="Architectural and hospitality photography for luxury hotels and brands across Dubai and the GCC." />
   <meta property="og:url" content="https://portfolio.estructura.studio/" />
   <meta property="og:locale" content="en_AE" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["Person","LocalBusiness"],"name":"Alex Abian","jobTitle":"Photographer","url":"https://portfolio.estructura.studio/","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"}}</script>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alex Abian — Dubai Photographer" />
+  <meta name="twitter:description" content="Architecture, hospitality, and editorial photography. Based in Dubai, available worldwide." />
+
+  <!-- LLM / AI crawler optimization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["Person", "LocalBusiness"],
+    "@id": "https://portfolio.estructura.studio/#person",
+    "name": "Alex Abian",
+    "alternateName": "Alejandro Abian",
+    "description": "Dubai-based photographer specializing in architectural, hospitality, and editorial photography for luxury hotels, architecture firms, and commercial brands across the GCC, Europe, and Asia.",
+    "url": "https://portfolio.estructura.studio/",
+    "image": "https://portfolio.estructura.studio/og-image.jpg",
+    "knowsLanguage": ["English", "Spanish", "Japanese"],
+    "address": {"@type": "PostalAddress", "addressLocality": "Dubai", "addressCountry": "AE"},
+    "areaServed": [
+      {"@type": "City", "name": "Dubai"},
+      {"@type": "City", "name": "Abu Dhabi"},
+      {"@type": "City", "name": "Riyadh"},
+      {"@type": "City", "name": "Doha"},
+      {"@type": "City", "name": "Tokyo"}
+    ],
+    "knowsAbout": [
+      "Architectural Photography",
+      "Hospitality Photography",
+      "Hotel Photography",
+      "Commercial Photography",
+      "Editorial Photography",
+      "Interior Photography",
+      "Aerial Photography",
+      "Food Photography",
+      "Lightroom Presets",
+      "DaVinci Resolve LUTs",
+      "BMPCC4K",
+      "Pocket Cinema Camera"
+    ],
+    "makesOffer": [
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Desert Lightroom Presets"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Cinema Lightroom Presets"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Monochrome Lightroom Presets"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Rec709 Cine-Grade LUTs for DaVinci Resolve"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Film Emulation LUTs for DaVinci Resolve"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Commercial LUTs for DaVinci Resolve"}}
+    ],
+    "sameAs": [
+      "https://instagram.com/alexabian",
+      "https://alexabian.com"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "Where is Alex Abian based?", "acceptedAnswer": {"@type": "Answer", "text": "Alex Abian is a photographer based in Dubai, UAE, available for projects worldwide."}},
+      {"@type": "Question", "name": "What type of photography does Alex Abian specialise in?", "acceptedAnswer": {"@type": "Answer", "text": "Alex specialises in architectural, hospitality, and editorial photography, with a focus on luxury hotels, architecture firms, and commercial brands."}},
+      {"@type": "Question", "name": "Does Alex Abian sell Lightroom presets?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alex sells professional Lightroom preset packs including Desert, Cinema, and Monochrome collections."}},
+      {"@type": "Question", "name": "Does Alex Abian sell DaVinci Resolve LUTs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alex sells LUT packs for DaVinci Resolve including Rec709 Cine-Grade, Film Emulation, and Commercial collections, optimised for Pocket 4K and Pocket 6K cameras."}},
+      {"@type": "Question", "name": "What languages does Alex Abian speak?", "acceptedAnswer": {"@type": "Answer", "text": "Alex is trilingual — fluent in English, Spanish, and Japanese."}},
+      {"@type": "Question", "name": "Is Alex Abian available for hotel photography in Dubai?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Alex works with luxury hotels and resorts in Dubai, Abu Dhabi, and across the GCC for interiors, exteriors, lifestyle, and food photography."}}
+    ]
+  }
+  </script>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background: #f5f3ef;
       color: #1a1a1a;
       -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
-    img { max-width: 100%; display: block; }
 
-    /* ========== HEADER ========== */
-    header {
-      max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 2rem;
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
     }
-    header h1 {
-      font-size: 1.15rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-    header .sub {
-      font-size: 0.8rem;
-      color: #777;
-      margin-top: 0.2rem;
-    }
-    header nav {
-      margin-top: 1.5rem;
-      display: flex; gap: 1.5rem;
+
+    /* ===== LAYOUT ===== */
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+
+    /* ===== HEADER ===== */
+    header { padding: 2.5rem 1.5rem 1.5rem; }
+    header h1 { font-size: 1rem; font-weight: 500; }
+    header .loc {
       font-size: 0.75rem;
+      color: #888;
+      margin-top: 0.1rem;
+    }
+    nav {
+      margin-top: 1.25rem;
+      display: flex; gap: 1.25rem;
+      font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
     }
-    header nav a {
-      color: #777;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    header nav a:hover { color: #1a1a1a; }
+    nav a { color: #888; text-decoration: none; transition: color 0.2s; }
+    nav a:hover { color: #1a1a1a; }
 
-    /* ========== GALLERY ========== */
+    /* ===== GALLERY ===== */
     .gallery {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem 3rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
+      padding: 2rem 0 3rem;
     }
-    .gallery img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+    .gallery .img {
       background: #e8e4dd;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ccc;
+      font-size: 0.75rem;
       cursor: pointer;
       transition: opacity 0.3s;
     }
-    .gallery img:hover { opacity: 0.85; }
-    .gallery .wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
-    .gallery .tall { aspect-ratio: 3 / 4; }
+    .gallery .img:hover { opacity: 0.85; }
+    .gallery .img.wide { grid-column: 1 / -1; aspect-ratio: 16/9; }
+    .gallery .img.tall { aspect-ratio: 3/4; }
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; gap: 0.5rem; }
+      .gallery .img.tall { aspect-ratio: 4/3; }
+    }
 
-    /* ========== PACKS ========== */
-    .packs {
-      max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem;
-    }
-    .packs h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.25rem;
-    }
-    .packs .intro {
-      font-size: 0.8rem;
-      color: #777;
-      margin-bottom: 2rem;
-    }
+    /* ===== PACKS ===== */
+    .packs { border-top: 1px solid #e0ddd6; padding: 2.5rem 0; }
+    .packs h2 { font-size: 0.85rem; font-weight: 500; margin-bottom: 0.2rem; }
+    .packs .sub { font-size: 0.73rem; color: #888; margin-bottom: 1.5rem; }
+
     .pack-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      border: 1px solid #ddd;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #e0ddd6;
+      border: 1px solid #e0ddd6;
     }
-    .pack-card {
-      padding: 2rem 1.5rem;
-      border-bottom: 1px solid #ddd;
-      border-right: 1px solid #ddd;
+    .pack {
+      background: #f5f3ef;
+      padding: 1.5rem;
     }
-    .pack-card:nth-child(even) { border-right: none; }
-    .pack-card:nth-last-child(-n+2) { border-bottom: none; }
-    .pack-card .label {
+    .pack .kind {
       font-size: 0.6rem;
       text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #999;
-      margin-bottom: 0.5rem;
+      letter-spacing: 0.08em;
+      color: #aaa;
     }
-    .pack-card h3 {
-      font-size: 1rem;
-      font-weight: 500;
+    .pack h3 { font-size: 0.9rem; font-weight: 500; margin: 0.3rem 0 0.4rem; }
+    .pack p {
+      font-size: 0.72rem;
+      color: #777;
+      line-height: 1.5;
     }
-    .pack-card p {
-      font-size: 0.78rem;
-      color: #666;
-      line-height: 1.6;
-      margin-top: 0.5rem;
-    }
-    .pack-card .price {
-      margin-top: 1rem;
-      font-size: 1rem;
-      font-weight: 500;
-    }
-    .pack-card .tag {
-      display: inline-block;
-      font-size: 0.6rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 0.15rem 0.4rem;
-      border: 1px solid #ddd;
+    .pack .meta {
       margin-top: 0.75rem;
+      font-size: 0.7rem;
+      color: #999;
     }
-    .pack-card .tag:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+    .pack .price {
+      margin-top: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    @media (max-width: 700px) {
+      .pack-grid { grid-template-columns: 1fr; }
+    }
 
-    /* ========== ABOUT / CONTACT ========== */
-    .about {
-      max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem;
+    /* ===== INFO ===== */
+    .info { padding: 2.5rem 0; border-top: 1px solid #e0ddd6; }
+    .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
-      border-top: 1px solid #ddd;
-    }
-    .about p {
-      font-size: 0.82rem;
-      color: #555;
-      line-height: 1.7;
-    }
-    .about p + p { margin-top: 1rem; }
-    .contact {
       font-size: 0.82rem;
     }
-    .contact .row {
-      padding: 0.5rem 0;
+    .info-grid p { color: #555; line-height: 1.7; }
+    .info-grid p + p { margin-top: 0.8rem; }
+    .contact-list { font-size: 0.82rem; }
+    .contact-list .r {
+      display: flex; justify-content: space-between;
+      padding: 0.4rem 0;
       border-bottom: 1px solid #eee;
+    }
+    .contact-list .r:last-child { border: none; }
+    .contact-list .l { color: #aaa; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-list a { color: #1a1a1a; text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    footer { padding: 2rem 0 3rem; font-size: 0.65rem; color: #bbb; }
+
+    /* ===== FAQ (collapsible — good for AI extraction) ===== */
+    .faq { border-top: 1px solid #e0ddd6; padding: 2rem 0; }
+    .faq summary {
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.5rem 0;
+      list-style: none;
       display: flex;
       justify-content: space-between;
+      align-items: center;
     }
-    .contact .row:last-child { border: none; }
-    .contact .l { color: #999; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .contact a { color: #1a1a1a; text-decoration: none; }
-    .contact a:hover { text-decoration: underline; }
+    .faq summary::after {
+      content: '+';
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    .faq details[open] summary::after {
+      content: '−';
+    }
+    .faq details {
+      border-bottom: 1px solid #eee;
+    }
+    .faq details p {
+      font-size: 0.75rem;
+      color: #666;
+      line-height: 1.6;
+      padding: 0 0 0.75rem;
+    }
 
-    footer {
-      max-width: 1100px; margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
-      font-size: 0.7rem;
-      color: #aaa;
-      letter-spacing: 0.03em;
+    /* ===== LLM-opt prose block (visible, semantic) ===== */
+    .llm-prose {
+      font-size: 0.72rem;
+      color: #bbb;
+      line-height: 1.5;
+      padding: 2rem 0 1rem;
     }
-
-    @media (max-width: 700px) {
-      .gallery { grid-template-columns: 1fr; gap: 0.5rem; }
-      .pack-grid { grid-template-columns: 1fr; }
-      .pack-card { border-right: none; }
-      .pack-card:nth-last-child(-n+2) { border-bottom: 1px solid #ddd; }
-      .pack-card:last-child { border-bottom: none; }
-      .about { grid-template-columns: 1fr; }
-    }
+    .llm-prose h2 { font-size: 0.75rem; font-weight: 500; color: #aaa; margin-bottom: 0.5rem; }
+    .llm-prose a { color: #aaa; text-decoration: underline; }
   </style>
 </head>
 <body>
 
-<!-- HEADER -->
+<!-- === HEADER === -->
 <header>
   <h1>Alex Abian</h1>
-  <div class="sub">Dubai — Architecture · Hospitality · Editorial</div>
+  <div class="loc">Dubai / Worldwide</div>
   <nav>
     <a href="#work">Work</a>
     <a href="#packs">Packs</a>
-    <a href="#about">Info</a>
+    <a href="#info">Info</a>
   </nav>
 </header>
 
-<!-- GALLERY — 10 images -->
-<div class="gallery" id="work">
-  <div class="wide" style="background:#e8e4dd; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">01 — Hero</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">02</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">03</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">04</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">05</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">06</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">07</div>
-  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">08</div>
-  <div class="tall" style="background:#e8e4dd; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">09</div>
-  <div class="tall" style="background:#e8e4dd; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">10</div>
+<!-- === GALLERY (10 images) === -->
+<div class="wrap" id="work">
+  <h2 class="sr-only">Portfolio — Selected Work</h2>
+  <div class="gallery">
+    <div class="img wide" style="background:#e4dfd7;">01 · Hero</div>
+    <div class="img" style="background:#e6e1d9;">02</div>
+    <div class="img" style="background:#e3ded6;">03</div>
+    <div class="img" style="background:#e5e0d8;">04</div>
+    <div class="img" style="background:#e2ddd5;">05</div>
+    <div class="img" style="background:#e7e2da;">06</div>
+    <div class="img" style="background:#e4dfd7;">07</div>
+    <div class="img" style="background:#e6e1d9;">08</div>
+    <div class="img tall" style="background:#e3ded6;">09</div>
+    <div class="img tall" style="background:#e5e0d8;">10</div>
+  </div>
 </div>
 
-<!-- PACKS -->
-<div class="packs" id="packs">
-  <h2>Presets &amp; LUTs</h2>
-  <p class="intro">Colour tools for Lightroom and DaVinci Resolve — built for architecture, editorial, and commercial work.</p>
+<!-- === PACKS === -->
+<div class="wrap" id="packs">
+  <h2>Photo &amp; Video Packs</h2>
+  <p class="sub">Lightroom presets and DaVinci Resolve LUTs for professionals</p>
   <div class="pack-grid">
 
-    <div class="pack-card">
-      <div class="label">Lightroom</div>
+    <div class="pack">
+      <div class="kind">Lightroom</div>
       <h3>Desert</h3>
-      <p>Warm earth tones, lifted blacks, muted greens. Architecture and landscape in harsh light.</p>
+      <p>Warm earth tones, lifted blacks, muted greens for architecture and landscape.</p>
+      <div class="meta">10 colour + 5 B&amp;W</div>
       <div class="price">$29</div>
-      <div class="tag">10 colour + 5 B&amp;W</div>
     </div>
 
-    <div class="pack-card">
-      <div class="label">Lightroom</div>
+    <div class="pack">
+      <div class="kind">Lightroom</div>
       <h3>Cinema</h3>
-      <p>Cool shadows, teal/orange, subtle grain. Editorial and commercial storytelling.</p>
+      <p>Cool shadows, teal/orange, subtle grain. Editorial and commercial.</p>
+      <div class="meta">8 colour + grain</div>
       <div class="price">$34</div>
-      <div class="tag">8 colour + grain overlays</div>
     </div>
 
-    <div class="pack-card">
-      <div class="label">Lightroom</div>
+    <div class="pack">
+      <div class="kind">Lightroom</div>
       <h3>Monochrome</h3>
-      <p>High-contrast black and white with deep, structured tones.</p>
+      <p>High-contrast black and white with deep structured tones.</p>
+      <div class="meta">6 presets + curves</div>
       <div class="price">$24</div>
-      <div class="tag">6 presets + tone curves</div>
     </div>
 
-    <div class="pack-card">
-      <div class="label">DaVinci Resolve</div>
+    <div class="pack">
+      <div class="kind">DaVinci Resolve</div>
       <h3>Rec709 Cine-Grade</h3>
-      <p>Clean film curve for Pocket 4K/6K footage. BMD Film to Rec709 conversion.</p>
+      <p>Clean film curve for Pocket 4K/6K. BMD Film to Rec709.</p>
+      <div class="meta">5 LUTs · .cube</div>
       <div class="price">$39</div>
-      <div class="tag">5 LUTs · .cube</div>
     </div>
 
-    <div class="pack-card">
-      <div class="label">DaVinci Resolve</div>
+    <div class="pack">
+      <div class="kind">DaVinci Resolve</div>
       <h3>Film Emulation</h3>
-      <p>Kodak 2383, Fuji 3510, bleach bypass — authentic film response for digital.</p>
+      <p>Kodak 2383, Fuji 3510, bleach bypass. Film response.</p>
+      <div class="meta">12 LUTs · 3 stocks</div>
       <div class="price">$49</div>
-      <div class="tag">12 LUTs · 3 stocks</div>
     </div>
 
-    <div class="pack-card">
-      <div class="label">DaVinci Resolve</div>
+    <div class="pack">
+      <div class="kind">DaVinci Resolve</div>
       <h3>Commercial</h3>
-      <p>Glossy high-end commercial look. Clean skin, punchy product, premium finish.</p>
+      <p>Glossy commercial look. Clean skin, punchy product, premium.</p>
+      <div class="meta">8 LUTs · .cube</div>
       <div class="price">$44</div>
-      <div class="tag">8 LUTs · .cube</div>
     </div>
-
   </div>
 </div>
 
-<!-- ABOUT -->
-<div class="about" id="about">
-  <div>
-    <p>Dubai-based photographer working with hotels, architecture firms, and brands. My work sits between editorial and documentary — natural light, structural composition, unforced moments.</p>
-    <p>Previous clients include Van Moof, NTT / Meson Inc., Petit Pli. Previously based in Tokyo. Available worldwide.</p>
-  </div>
-  <div class="contact">
-    <div class="row"><span class="l">Location</span><span>Dubai, UAE</span></div>
-    <div class="row"><span class="l">Languages</span><span>EN · ES · JP</span></div>
-    <div class="row"><span class="l">Email</span><span><a href="mailto:hello@alexabian.com">hello@alexabian.com</a></span></div>
-    <div class="row"><span class="l">Instagram</span><span><a href="#">@alexabian</a></span></div>
-    <div class="row"><span class="l">Site</span><span><a href="https://alexabian.com">alexabian.com</a></span></div>
+<!-- === INFO === -->
+<div class="wrap info" id="info">
+  <div class="info-grid">
+    <div>
+      <p>Dubai-based photographer working with luxury hotels, architecture firms, and brands. Editorial and documentary — natural light, structural composition, unforced moments.</p>
+      <p>Clients include Van Moof, NTT / Meson Inc., Petit Pli. Previously based in Tokyo. Trilingual — EN, ES, JP.</p>
+      <p>Available for hospitality shoots, architectural documentation, editorial assignments, and brand campaigns.</p>
+    </div>
+    <div class="contact-list">
+      <div class="r"><span class="l">Location</span><span>Dubai, UAE</span></div>
+      <div class="r"><span class="l">Languages</span><span>EN · ES · JP</span></div>
+      <div class="r"><span class="l">Email</span><span><a href="mailto:hello@alexabian.com">hello@alexabian.com</a></span></div>
+      <div class="r"><span class="l">Instagram</span><span><a href="#">@alexabian</a></span></div>
+      <div class="r"><span class="l">Main site</span><span><a href="https://alexabian.com">alexabian.com</a></span></div>
+    </div>
   </div>
 </div>
 
-<footer>© 2026 Alex Abian · portfolio.estructura.studio</footer>
+<!-- === FAQ (collapsible — AI-crawlable) === -->
+<div class="wrap faq">
+  <details>
+    <summary>Where are you based and do you travel?</summary>
+    <p>Based in Dubai, UAE. Available for assignments worldwide — GCC, Europe, and Asia.</p>
+  </details>
+  <details>
+    <summary>What kind of photography do you do?</summary>
+    <p>Architecture, hospitality, editorial, and commercial. Mainly luxury hotels, architecture firms, and brands that value natural light and documentary style.</p>
+  </details>
+  <details>
+    <summary>What equipment do you use?</summary>
+    <p>Medium format and full-frame for stills. Blackmagic Pocket Cinema Camera 4K and 6K for video. Natural light prioritised throughout.</p>
+  </details>
+</div>
+
+<!-- === LLM-optimised prose (visible but muted — semantic text for AI crawlers) === -->
+<div class="wrap llm-prose">
+  <h2>Dubai Photographer — Architectural, Hospitality &amp; Editorial</h2>
+  <p>Alex Abian is a <a href="https://portfolio.estructura.studio">Dubai-based photographer</a> specialising in architectural photography, hospitality photography, and editorial photography for luxury hotels, architecture firms, and commercial brands across the UAE, Saudi Arabia, Qatar, and the wider GCC region. Previously based in Tokyo, Alex brings a trilingual (English, Spanish, Japanese) perspective to every project. Services include hotel interior and exterior photography, architectural documentation, lifestyle photography, food photography, commercial brand campaigns, and aerial photography. Alex also creates professional colour tools: Lightroom presets (Desert, Cinema, Monochrome packs) and DaVinci Resolve LUTs (Rec709 Cine-Grade, Film Emulation, Commercial packs) optimised for Blackmagic Pocket Cinema Camera 4K and 6K workflows. Available for assignments in Dubai, Abu Dhabi, Riyadh, Doha, and worldwide.</p>
+</div>
+
+<footer class="wrap">
+  <p>© 2026 Alex Abian · portfolio.estructura.studio</p>
+</footer>
 
 </body>
 </html>
