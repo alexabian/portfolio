@@ -3,637 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alex Abian — Architecture · Hospitality · Editorial</title>
-  <meta name="description" content="Dubai-based photographer working with luxury hotels, architecture firms, and editorial clients across Dubai and the GCC." />
+  <title>Alex Abian — Photography</title>
+  <meta name="description" content="Dubai-based photographer — ten images. Lightroom presets and cinematic LUTs for architecture, editorial, and commercial work." />
   <link rel="canonical" href="https://portfolio.estructura.studio/" />
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alex Abian — Architecture · Hospitality · Editorial" />
-  <meta property="og:description" content="Dubai-based photographer for luxury hotels and architecture firms." />
+  <meta property="og:title" content="Alex Abian — Photography" />
   <meta property="og:url" content="https://portfolio.estructura.studio/" />
   <meta property="og:locale" content="en_AE" />
-
-  <!-- Schema -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":["Person","LocalBusiness"],"name":"Alex Abian","jobTitle":"Architectural & Commercial Photographer","url":"https://portfolio.estructura.studio/","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"}}</script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":["Person","LocalBusiness"],"name":"Alex Abian","jobTitle":"Photographer","url":"https://portfolio.estructura.studio/","address":{"@type":"PostalAddress","addressLocality":"Dubai","addressCountry":"AE"}}</script>
   <style>
-    /* ============================================
-       ROOT
-       ============================================ */
-    :root {
-      --sand: #f0e8d5;
-      --cream: #f5efe0;
-      --dune: #d4c5a9;
-      --stone: #c4bcad;
-      --ink: #3d3529;
-      --ink-soft: #7a6f5e;
-      --ink-muted: #a89883;
-      --accent: #b85d3b;
-      --accent-soft: rgba(184, 93, 59, 0.1);
-      --sage: #8a9a7e;
-      --sage-soft: rgba(138, 154, 126, 0.15);
-      --earth: #5a4e3c;
-      --border: #d5cfc3;
-      --font: 'DM Sans', system-ui, -apple-system, sans-serif;
-      --font-serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-      --max-w: 1120px;
-      --col-gap: 2rem;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: var(--font);
-      background: var(--cream);
-      color: var(--ink);
-      line-height: 1.6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f3ef;
+      color: #1a1a1a;
       -webkit-font-smoothing: antialiased;
     }
     img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--accent); color: #fff; }
 
-    /* ============================================
-       NAV
-       ============================================ */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 1.5rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-      background: rgba(240, 232, 213, 0.88);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+    /* ========== HEADER ========== */
+    header {
+      max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem 2rem;
     }
-    .logo {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      letter-spacing: -0.02em;
-      font-style: italic;
+    header h1 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
     }
-    .logo span { color: var(--sage); }
-    nav .links { display: flex; gap: 0; align-items: center; }
-    nav .links a {
+    header .sub {
       font-size: 0.8rem;
-      letter-spacing: 0.04em;
+      color: #777;
+      margin-top: 0.2rem;
+    }
+    header nav {
+      margin-top: 1.5rem;
+      display: flex; gap: 1.5rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      color: var(--ink-soft);
-      padding: 0.4rem 1rem;
+      letter-spacing: 0.06em;
+    }
+    header nav a {
+      color: #777;
+      text-decoration: none;
       transition: color 0.2s;
     }
-    nav .links a:hover { color: var(--ink); }
-    .nav-cta {
-      background: var(--ink);
-      color: var(--cream) !important;
-      border-radius: 2px;
-      margin-left: 1rem;
-      padding: 0.5rem 1.25rem !important;
-      font-weight: 500 !important;
-    }
-    .nav-cta:hover { background: var(--earth) !important; }
-    .hamburger { display: none; background: none; border: none; cursor: pointer; }
-    .hamburger svg { width: 24px; height: 24px; stroke: var(--ink); }
+    header nav a:hover { color: #1a1a1a; }
 
-    /* ============================================
-       HERO — editorial spread
-       ============================================ */
-    .hero {
-      padding: 8rem 2rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--col-gap);
-      max-width: var(--max-w);
+    /* ========== GALLERY ========== */
+    .gallery {
+      max-width: 1100px;
       margin: 0 auto;
-      align-items: end;
-    }
-    .hero-text .label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--sage);
-      margin-bottom: 1.5rem;
-      font-weight: 500;
-    }
-    .hero-text h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 5vw, 3.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.03em;
-      font-weight: 400;
-    }
-    .hero-text h1 em {
-      font-style: italic;
-      color: var(--accent);
-    }
-    .hero-text p {
-      color: var(--ink-soft);
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      line-height: 1.7;
-      max-width: 38ch;
-    }
-    .hero-image {
-      position: relative;
-    }
-    .hero-image .frame {
-      background: var(--border);
-      aspect-ratio: 4 / 3;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--ink-muted);
-      font-size: 0.85rem;
-      font-family: var(--font-serif);
-      font-style: italic;
-      overflow: hidden;
-    }
-    .hero-image .frame svg {
-      width: 100%; height: 100%;
-    }
-    .hero-meta {
-      margin-top: 2rem;
-      display: flex; gap: 2rem; font-size: 0.75rem;
-    }
-    .hero-meta span { color: var(--ink-muted); }
-    .hero-meta strong { color: var(--ink); font-weight: 500; }
-
-    /* ============================================
-       SECTION COMMON
-       ============================================ */
-    section { padding: 5rem 2rem; }
-    .section-inner { max-width: var(--max-w); margin: 0 auto; }
-    .section-header {
-      margin-bottom: 3rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 1.5rem;
-    }
-    .section-label {
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--sage);
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      font-weight: 400;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-    }
-    .section-sub {
-      color: var(--ink-soft);
-      font-size: 0.9rem;
-      max-width: 50ch;
-      margin-top: 0.5rem;
-    }
-
-    /* ============================================
-       PORTFOLIO — contact sheet style
-       ============================================ */
-    .contact-sheet {
+      padding: 0 1.5rem 3rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
+      gap: 1rem;
     }
-    .sheet-item {
-      position: relative;
+    .gallery img {
+      width: 100%;
       aspect-ratio: 4 / 3;
-      background: var(--cream);
-      overflow: hidden;
+      object-fit: cover;
+      background: #e8e4dd;
       cursor: pointer;
+      transition: opacity 0.3s;
     }
-    .sheet-item .ref {
-      position: absolute; top: 0.75rem; left: 0.75rem;
-      font-family: 'DM Sans', monospace;
-      font-size: 0.6rem;
-      color: var(--ink-muted);
-      letter-spacing: 0.02em;
-      opacity: 0.6;
-      z-index: 2;
-    }
-    .sheet-item svg { width: 100%; height: 100%; }
-    .sheet-item .info {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 1.5rem 1rem 1rem;
-      background: linear-gradient(transparent, rgba(245,239,224,0.95));
-      opacity: 0;
-      transition: opacity 0.35s;
-    }
-    .sheet-item:hover .info { opacity: 1; }
-    .sheet-item .info h3 {
-      font-family: var(--font-serif);
-      font-size: 0.95rem;
-      font-weight: 400;
-    }
-    .sheet-item .info p {
-      font-size: 0.72rem;
-      color: var(--ink-soft);
-      letter-spacing: 0.02em;
-    }
+    .gallery img:hover { opacity: 0.85; }
+    .gallery .wide { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+    .gallery .tall { aspect-ratio: 3 / 4; }
 
-    /* ============================================
-       STORE — catalog style
-       ============================================ */
-    .store-grid {
+    /* ========== PACKS ========== */
+    .packs {
+      max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem;
+    }
+    .packs h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.25rem;
+    }
+    .packs .intro {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 2rem;
+    }
+    .pack-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid #ddd;
     }
-    .store-card {
-      background: var(--cream);
+    .pack-card {
       padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
     }
-    .store-card .cat {
+    .pack-card:nth-child(even) { border-right: none; }
+    .pack-card:nth-last-child(-n+2) { border-bottom: none; }
+    .pack-card .label {
       font-size: 0.6rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--sage);
-      margin-bottom: 0.75rem;
+      color: #999;
+      margin-bottom: 0.5rem;
     }
-    .store-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      font-weight: 400;
+    .pack-card h3 {
+      font-size: 1rem;
+      font-weight: 500;
     }
-    .store-card p {
+    .pack-card p {
       font-size: 0.78rem;
-      color: var(--ink-soft);
+      color: #666;
       line-height: 1.6;
+      margin-top: 0.5rem;
+    }
+    .pack-card .price {
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    .pack-card .tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.15rem 0.4rem;
+      border: 1px solid #ddd;
       margin-top: 0.75rem;
-      flex: 1;
     }
-    .store-card .features {
-      list-style: none;
-      margin-top: 1rem;
-    }
-    .store-card .features li {
-      font-size: 0.7rem;
-      color: var(--ink-soft);
-      padding: 0.2rem 0;
-    }
-    .store-card .features li::before {
-      content: '— ';
-      color: var(--sage);
-    }
-    .store-card .price {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-style: italic;
-      color: var(--accent);
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid var(--border);
-    }
+    .pack-card .tag:hover { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
 
-    /* ============================================
-       ABOUT — two column editorial
-       ============================================ */
-    .about-grid {
+    /* ========== ABOUT / CONTACT ========== */
+    .about {
+      max-width: 1100px; margin: 0 auto; padding: 3rem 1.5rem;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 3rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      border-top: 1px solid #ddd;
     }
-    .about-body p {
-      font-size: 0.85rem;
-      color: var(--ink-soft);
-      line-height: 1.8;
+    .about p {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.7;
     }
-    .about-body p + p { margin-top: 1rem; }
-    .about-body .dropcap::first-letter {
-      font-family: var(--font-serif);
-      font-size: 3.2rem;
-      float: left;
-      line-height: 0.9;
-      margin-right: 0.4rem;
-      color: var(--sage);
+    .about p + p { margin-top: 1rem; }
+    .contact {
+      font-size: 0.82rem;
     }
-    .contact-card {
-      border: 1px solid var(--border);
-      padding: 2rem;
-    }
-    .contact-card .row {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--border);
+    .contact .row {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #eee;
       display: flex;
       justify-content: space-between;
-      font-size: 0.8rem;
     }
-    .contact-card .row:last-child { border: none; }
-    .contact-card .label {
-      color: var(--ink-muted);
-      font-size: 0.65rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    .contact-card .value { color: var(--ink); }
-    .contact-card a:hover { color: var(--accent); }
+    .contact .row:last-child { border: none; }
+    .contact .l { color: #999; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact a { color: #1a1a1a; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
 
-    /* ============================================
-       FOOTER
-       ============================================ */
     footer {
-      padding: 3rem 2rem;
-      border-top: 1px solid var(--border);
-      text-align: center;
+      max-width: 1100px; margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
       font-size: 0.7rem;
-      color: var(--ink-muted);
-      letter-spacing: 0.04em;
+      color: #aaa;
+      letter-spacing: 0.03em;
     }
 
-    /* ============================================
-       RESPONSIVE
-       ============================================ */
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-text h1 { font-size: 2rem; }
-      .about-grid { grid-template-columns: 1fr; }
-      .store-grid { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      nav .links { display: none; }
-      .hamburger { display: block; }
-      nav { padding: 1rem 1.25rem; }
-      .hero { padding: 6rem 1.25rem 2rem; }
-      section { padding: 3rem 1.25rem; }
-      .contact-sheet { grid-template-columns: 1fr; }
-    }
-
-    /* Mobile menu */
-    .mobile-menu {
-      display: none;
-      position: fixed; inset: 0; z-index: 99;
-      background: rgba(246,244,240,0.98);
-      backdrop-filter: blur(20px);
-      flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 1.5rem;
-    }
-    .mobile-menu.active { display: flex; }
-    .mobile-menu a {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      color: var(--ink-soft);
-    }
-    .mobile-menu a:hover { color: var(--ink); }
-
-    /* Grain texture overlay */
-    .grain {
-      position: fixed; inset: 0;
-      pointer-events: none; z-index: 200;
-      opacity: 0.035;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 256px 256px;
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .grain { display: none; }
+    @media (max-width: 700px) {
+      .gallery { grid-template-columns: 1fr; gap: 0.5rem; }
+      .pack-grid { grid-template-columns: 1fr; }
+      .pack-card { border-right: none; }
+      .pack-card:nth-last-child(-n+2) { border-bottom: 1px solid #ddd; }
+      .pack-card:last-child { border-bottom: none; }
+      .about { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-<div class="grain"></div>
+<!-- HEADER -->
+<header>
+  <h1>Alex Abian</h1>
+  <div class="sub">Dubai — Architecture · Hospitality · Editorial</div>
+  <nav>
+    <a href="#work">Work</a>
+    <a href="#packs">Packs</a>
+    <a href="#about">Info</a>
+  </nav>
+</header>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="logo"><span>↗</span> Alex Abian</a>
-  <div class="links">
-    <a href="#work">Selected Work</a>
-    <a href="#store">Presets &amp; LUTs</a>
-    <a href="#contact" class="nav-cta">Inquire</a>
-  </div>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M4 6h16M4 12h16M4 18h16"/>
-    </svg>
-  </button>
-</nav>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#work" onclick="toggleMenu()">Selected Work</a>
-  <a href="#store" onclick="toggleMenu()">Store</a>
-  <a href="#about" onclick="toggleMenu()">About</a>
-  <a href="#contact" onclick="toggleMenu()">Inquire</a>
+<!-- GALLERY — 10 images -->
+<div class="gallery" id="work">
+  <div class="wide" style="background:#e8e4dd; aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">01 — Hero</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">02</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">03</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">04</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">05</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">06</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">07</div>
+  <div style="background:#e8e4dd; aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">08</div>
+  <div class="tall" style="background:#e8e4dd; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">09</div>
+  <div class="tall" style="background:#e8e4dd; aspect-ratio:3/4; display:flex; align-items:center; justify-content:center; color:#bbb; font-size:0.85rem;">10</div>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text">
-    <div class="label">Dubai / Worldwide</div>
-    <h1>Architecture, <em>hospitality</em>, and the spaces in between</h1>
-    <p>Editorial and commercial photography for luxury hotels, architecture firms, and brands. Natural light, structural composition, unforced storytelling.</p>
-    <div class="hero-meta">
-      <span>Based in <strong>Dubai</strong></span>
-      <span>Available <strong>Worldwide</strong></span>
-      <span>Since <strong>2017</strong></span>
-    </div>
-  </div>
-  <div class="hero-image">
-    <div class="frame">
-      <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-        <rect width="800" height="600" fill="#e3dfd9"/>
-        <g opacity="0.15">
-          <rect x="120" y="100" width="560" height="400" fill="none" stroke="#1c1b18" stroke-width="1"/>
-          <line x1="120" y1="200" x2="680" y2="200" stroke="#1c1b18" stroke-width="0.5"/>
-          <line x1="120" y1="300" x2="680" y2="300" stroke="#1c1b18" stroke-width="0.5"/>
-          <line x1="120" y1="400" x2="680" y2="400" stroke="#1c1b18" stroke-width="0.5"/>
-          <line x1="300" y1="100" x2="300" y2="500" stroke="#1c1b18" stroke-width="0.5"/>
-          <line x1="500" y1="100" x2="500" y2="500" stroke="#1c1b18" stroke-width="0.5"/>
-        </g>
-        <text x="400" y="340" text-anchor="middle" font-family="'DM Serif Display',serif" font-size="14" fill="#6b6763" font-style="italic">photograph</text>
-        <text x="400" y="360" text-anchor="middle" font-family="'DM Sans',sans-serif" font-size="8" fill="#9c9792">— contact sheet proof —</text>
-      </svg>
-    </div>
-  </div>
-</section>
+<!-- PACKS -->
+<div class="packs" id="packs">
+  <h2>Presets &amp; LUTs</h2>
+  <p class="intro">Colour tools for Lightroom and DaVinci Resolve — built for architecture, editorial, and commercial work.</p>
+  <div class="pack-grid">
 
-<!-- WORK -->
-<section id="work">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-label">Index 001–009</div>
-      <h2 class="section-title">Selected Work</h2>
+    <div class="pack-card">
+      <div class="label">Lightroom</div>
+      <h3>Desert</h3>
+      <p>Warm earth tones, lifted blacks, muted greens. Architecture and landscape in harsh light.</p>
+      <div class="price">$29</div>
+      <div class="tag">10 colour + 5 B&amp;W</div>
     </div>
-    <div class="contact-sheet" id="workGrid">
-      <!-- populated by JS -->
-    </div>
-  </div>
-</section>
 
-<!-- STORE -->
-<section id="store" style="background: var(--sand);">
-<div class="section-inner">
-    <div class="section-header">
-      <div class="section-label">Catalog</div>
-      <h2 class="section-title">Presets &amp; LUTs</h2>
-      <p class="section-sub">Professional colour tools for Lightroom and DaVinci Resolve. Built for architecture, editorial, and commercial work.</p>
+    <div class="pack-card">
+      <div class="label">Lightroom</div>
+      <h3>Cinema</h3>
+      <p>Cool shadows, teal/orange, subtle grain. Editorial and commercial storytelling.</p>
+      <div class="price">$34</div>
+      <div class="tag">8 colour + grain overlays</div>
     </div>
-    <div class="store-grid">
-      <div class="store-card">
-        <span class="cat">Lightroom</span>
-        <h3>Desert</h3>
-        <p>Warm, lifted earth tones. Architecture and landscape in harsh light.</p>
-        <ul class="features">
-          <li>10 colour presets</li>
-          <li>5 B&amp;W variants</li>
-          <li>LR Desktop + Mobile</li>
-        </ul>
-        <div class="price">$29</div>
-      </div>
-      <div class="store-card">
-        <span class="cat">Lightroom</span>
-        <h3>Cinema</h3>
-        <p>Cool shadows, teal/orange, subtle grain. Editorial storytelling.</p>
-        <ul class="features">
-          <li>8 colour presets</li>
-          <li>3 grain overlays</li>
-          <li>LR Desktop + Mobile</li>
-        </ul>
-        <div class="price">$34</div>
-      </div>
-      <div class="store-card">
-        <span class="cat">Lightroom</span>
-        <h3>Monochrome</h3>
-        <p>High-contrast B&amp;W with deep blacks and structured whites.</p>
-        <ul class="features">
-          <li>6 B&amp;W presets</li>
-          <li>Tone curve variants</li>
-          <li>LR Desktop + Mobile</li>
-        </ul>
-        <div class="price">$24</div>
-      </div>
-      <div class="store-card">
-        <span class="cat">DaVinci Resolve</span>
-        <h3>Cine-Grade Rec709</h3>
-        <p>Clean Rec709 conversion with a subtle film curve. Pocket 4K / 6K.</p>
-        <ul class="features">
-          <li>5 LUTs</li>
-          <li>BMD Film → Rec709</li>
-          <li>.cube format</li>
-        </ul>
-        <div class="price">$39</div>
-      </div>
-      <div class="store-card">
-        <span class="cat">DaVinci Resolve</span>
-        <h3>Film Emulation</h3>
-        <p>Kodak 2383, Fuji 3510, bleach bypass. Authentic film response.</p>
-        <ul class="features">
-          <li>12 LUTs</li>
-          <li>3 film stocks</li>
-          <li>.cube format</li>
-        </ul>
-        <div class="price">$49</div>
-      </div>
-      <div class="store-card">
-        <span class="cat">DaVinci Resolve</span>
-        <h3>Commercial</h3>
-        <p>Glossy high-end product and commercial looks — clean, punchy, premium.</p>
-        <ul class="features">
-          <li>8 LUTs</li>
-          <li>Commercial colour</li>
-          <li>.cube format</li>
-        </ul>
-        <div class="price">$44</div>
-      </div>
+
+    <div class="pack-card">
+      <div class="label">Lightroom</div>
+      <h3>Monochrome</h3>
+      <p>High-contrast black and white with deep, structured tones.</p>
+      <div class="price">$24</div>
+      <div class="tag">6 presets + tone curves</div>
     </div>
+
+    <div class="pack-card">
+      <div class="label">DaVinci Resolve</div>
+      <h3>Rec709 Cine-Grade</h3>
+      <p>Clean film curve for Pocket 4K/6K footage. BMD Film to Rec709 conversion.</p>
+      <div class="price">$39</div>
+      <div class="tag">5 LUTs · .cube</div>
+    </div>
+
+    <div class="pack-card">
+      <div class="label">DaVinci Resolve</div>
+      <h3>Film Emulation</h3>
+      <p>Kodak 2383, Fuji 3510, bleach bypass — authentic film response for digital.</p>
+      <div class="price">$49</div>
+      <div class="tag">12 LUTs · 3 stocks</div>
+    </div>
+
+    <div class="pack-card">
+      <div class="label">DaVinci Resolve</div>
+      <h3>Commercial</h3>
+      <p>Glossy high-end commercial look. Clean skin, punchy product, premium finish.</p>
+      <div class="price">$44</div>
+      <div class="tag">8 LUTs · .cube</div>
+    </div>
+
   </div>
-</section>
+</div>
 
 <!-- ABOUT -->
-<section id="about">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-label">About</div>
-      <h2 class="section-title">Alex Abian</h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-body">
-        <p class="dropcap">Dubai-based photographer working with luxury hotels, architecture firms, and brands that value precision over styling. My work sits between editorial and documentary — natural light, structural composition, unforced moments. Hospitality is my primary focus, but I shoot across editorial, commercial, and brand campaigns as well.</p>
-        <p>Previous clients include Van Moof, NTT / Meson Inc., Petit Pli, and editorial publications. Previously based in Tokyo; now operating out of Dubai for the GCC, Europe, and Asia. Fluent in English, Spanish, and Japanese — trilingual communication is standard on every project.</p>
-        <p>Available for hospitality shoots, architectural documentation, editorial assignments, and brand campaigns worldwide.</p>
-      </div>
-      <div class="contact-card">
-        <div class="row"><span class="label">Location</span><span class="value">Dubai, UAE</span></div>
-        <div class="row"><span class="label">Availability</span><span class="value">Worldwide</span></div>
-        <div class="row"><span class="label">Clients</span><span class="value">Hotels · Agencies · Brands</span></div>
-        <div class="row"><span class="label">Languages</span><span class="value">EN · ES · JP</span></div>
-        <div class="row"><span class="label">Email</span><span class="value"><a href="mailto:hello@alexabian.com">hello@alexabian.com</a></span></div>
-        <div class="row"><span class="label">Instagram</span><span class="value"><a href="#">@alexabian</a></span></div>
-      </div>
-    </div>
+<div class="about" id="about">
+  <div>
+    <p>Dubai-based photographer working with hotels, architecture firms, and brands. My work sits between editorial and documentary — natural light, structural composition, unforced moments.</p>
+    <p>Previous clients include Van Moof, NTT / Meson Inc., Petit Pli. Previously based in Tokyo. Available worldwide.</p>
   </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" style="background: var(--ink); color: var(--cream); text-align: center;">
-  <div class="section-inner">
-    <p class="section-label" style="color: var(--sage);">Start a project</p>
-    <h2 class="section-title" style="color: var(--cream); font-size: 2rem;">Let's work together</h2>
-    <p style="color: var(--ink-muted); margin: 1rem auto 2rem; max-width: 35ch; font-size: 0.9rem;">Tell me about your project. I'll respond within 24 hours.</p>
-    <a href="mailto:hello@alexabian.com" style="display: inline-block; padding: 0.75rem 2rem; background: var(--accent); color: #fff; border-radius: 2px; font-size: 0.85rem; letter-spacing: 0.04em;">hello@alexabian.com</a>
+  <div class="contact">
+    <div class="row"><span class="l">Location</span><span>Dubai, UAE</span></div>
+    <div class="row"><span class="l">Languages</span><span>EN · ES · JP</span></div>
+    <div class="row"><span class="l">Email</span><span><a href="mailto:hello@alexabian.com">hello@alexabian.com</a></span></div>
+    <div class="row"><span class="l">Instagram</span><span><a href="#">@alexabian</a></span></div>
+    <div class="row"><span class="l">Site</span><span><a href="https://alexabian.com">alexabian.com</a></span></div>
   </div>
-</section>
+</div>
 
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 Alex Abian · portfolio.estructura.studio</p>
-</footer>
+<footer>© 2026 Alex Abian · portfolio.estructura.studio</footer>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('active');
-  }
-
-  const projects = [
-    { title: 'Hven ▽', client: 'Tokyo Cocktail Bar', color: '#d9d5ce' },
-    { title: 'Reshape Your View', client: 'Meson Inc. × NTT', color: '#ddd9d2' },
-    { title: 'Van Moof — Why We Ride', client: 'Campaign', color: '#d5d1ca' },
-    { title: 'Loquat', client: 'Nishiizu Guesthouse', color: '#dbd7d0' },
-    { title: 'Daisei Sasamori', client: 'Tokyo Fitness', color: '#d7d3cc' },
-    { title: 'Natsumi Taoka', client: 'Pro Surfer Editorial', color: '#dcd8d1' },
-    { title: 'Petit Pli', client: 'Brand Campaign', color: '#d1cdc6' },
-    { title: 'Pentax Principles', client: 'Personal Project', color: '#d6d2cb' },
-    { title: 'vvfndr', client: 'Camera Showcase', color: '#dfdbd4' },
-  ];
-
-  const grid = document.getElementById('workGrid');
-  projects.forEach((p, i) => {
-    const item = document.createElement('div');
-    item.className = 'sheet-item';
-    const ref = '#'.concat(String(i + 1 + (i < 9 ? '&ensp;' : '')).trim());
-    item.innerHTML = `
-      <span class="ref">${String(i + 1).padStart(2, '0')}</span>
-      <svg viewBox="0 0 800 600" preserveAspectRatio="xMidYMid slice">
-        <rect width="800" height="600" fill="${p.color}"/>
-        <g opacity="0.12">
-          <rect x="80" y="80" width="640" height="440" fill="none" stroke="#1c1b18" stroke-width="0.8"/>
-          <line x1="80" y1="180" x2="720" y2="180" stroke="#1c1b18" stroke-width="0.3"/>
-          <line x1="80" y1="280" x2="720" y2="280" stroke="#1c1b18" stroke-width="0.3"/>
-          <line x1="80" y1="380" x2="720" y2="380" stroke="#1c1b18" stroke-width="0.3"/>
-          <line x1="260" y1="80" x2="260" y2="520" stroke="#1c1b18" stroke-width="0.3"/>
-          <line x1="440" y1="80" x2="440" y2="520" stroke="#1c1b18" stroke-width="0.3"/>
-          <line x1="620" y1="80" x2="620" y2="520" stroke="#1c1b18" stroke-width="0.3"/>
-        </g>
-        <text x="800" y="520" text-anchor="end" font-family="'DM Serif Display',serif" font-size="10" fill="#6b6763" font-style="italic">${p.client}</text>
-      </svg>
-      <div class="info">
-        <h3>${p.title}</h3>
-        <p>${p.client}</p>
-      </div>
-    `;
-    grid.appendChild(item);
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) document.getElementById('mobileMenu').classList.remove('active');
-  });
-</script>
 </body>
 </html>
