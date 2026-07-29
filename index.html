@@ -16,6 +16,11 @@
   <meta name="twitter:title" content="Alex Abian — Dubai Photographer" />
   <meta name="twitter:description" content="100MP medium format photography. Architecture, hospitality, and editorial." />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,200..1000;1,9..40,200..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -56,298 +61,618 @@
   </script>
 
   <style>
+    /* ─── RESET ─── */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      background: #f6f5f2;
-      color: #1a1a1a;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5efe0;
+      color: #3d3529;
       -webkit-font-smoothing: antialiased;
-      line-height: 1.5;
+      line-height: 1.6;
     }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
     .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .wrap { max-width: 960px; margin: 0 auto; padding: 0 1.5rem; }
-
-    /* HEADER */
-    header { padding: 2.25rem 1.5rem 0; text-align: center; }
-    header h1 { font-size: 1.5rem; font-weight: 400; letter-spacing: -0.02em; }
-    header .slogan { font-size: 0.72rem; color: #888; margin-top: 0.15rem; }
-    header .gear {
-      font-size: 0.62rem; color: #aaa; margin-top: 0.5rem; letter-spacing: 0.03em;
+    .section-label {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #8a9a7e;
+      margin-bottom: 0.75rem;
+      font-weight: 500;
     }
-    header .gear strong { color: #888; font-weight: 500; }
 
+    /* ─── NAV ─── */
     nav {
-      margin: 1rem 0 0;
-      display: flex; justify-content: center; gap: 1.25rem;
-      font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.08em;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(245, 239, 224, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #d5cfc3;
+      padding: 0 1.5rem;
     }
-    nav a { color: #888; text-decoration: none; transition: color 0.2s; padding: 0.25rem 0; }
-    nav a:hover { color: #1a1a1a; }
+    nav .inner {
+      max-width: 960px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 3.25rem;
+    }
+    nav .logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.05rem;
+      color: #3d3529;
+      letter-spacing: -0.02em;
+    }
+    nav .logo .sage { color: #8a9a7e; }
+    nav .links {
+      display: flex; gap: 1.25rem;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #7a6f5e;
+    }
+    nav .links a { transition: color 0.2s; padding: 0.2rem 0; }
+    nav .links a:hover { color: #3d3529; }
 
-    /* SERVICE TAGS */
-    .tags {
-      display: flex; justify-content: center; flex-wrap: wrap; gap: 0.35rem;
-      margin: 0.9rem 0 0;
+    /* ─── HERO ─── */
+    .hero {
+      padding: 6rem 1.5rem 3rem;
     }
-    .tags span {
-      font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.07em;
-      padding: 0.25rem 0.65rem; border: 1px solid #ddd; color: #777;
+    .hero .inner {
+      max-width: 960px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
     }
-    .tags span em { font-style: normal; color: #1a1a1a; font-weight: 500; }
-
-    /* HERO IMAGE STRIP */
-    .hero-strip { padding: 1.25rem 0 0; text-align: center; }
-    .hero-strip .img {
-      background: #e8e4dd; max-width: 100%;
-      aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center;
-      color: #ccc; font-size: 0.75rem;
+    .hero-text .label {
+      font-size: 0.62rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #8a9a7e;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
     }
-
-    /* GALLERY */
-    .gallery {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
-      padding: 1.5rem 0 2rem;
+    .hero-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: #3d3529;
     }
-    .gallery .img {
-      background: #e8e4dd; aspect-ratio: 4/3;
+    .hero-text h1 em {
+      font-style: italic;
+      color: #b85d3b;
+    }
+    .hero-text .sub {
+      font-size: 0.85rem;
+      color: #7a6f5e;
+      margin-top: 0.75rem;
+      line-height: 1.7;
+      max-width: 28em;
+    }
+    .hero-text .meta {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-top: 1.25rem;
+      font-size: 0.68rem;
+      color: #a89883;
+      letter-spacing: 0.03em;
+    }
+    .hero-text .meta span { display: flex; align-items: center; gap: 0.35rem; }
+    .hero-text .meta .dot { width: 3px; height: 3px; border-radius: 50%; background: #d5cfc3; display: inline-block; }
+    .hero-image {
+      aspect-ratio: 4/3;
+      background: #e8dfca;
       display: flex; align-items: center; justify-content: center;
-      color: #ccc; font-size: 0.7rem; cursor: pointer; transition: opacity 0.3s;
+      position: relative;
+      overflow: hidden;
     }
-    .gallery .img:hover { opacity: 0.85; }
-    .gallery .img.tall { aspect-ratio: 3/4; }
-    @media (max-width: 600px) {
-      .gallery { grid-template-columns: 1fr; gap: 0.4rem; }
-      .gallery .img.tall { aspect-ratio: 4/3; }
+    .hero-image .placeholder {
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #c4b8a0;
+      text-align: center;
+      line-height: 1.6;
+      padding: 1rem;
+    }
+    .hero-image .placeholder small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6rem;
+      font-style: normal;
+      color: #d5cfc3;
+      margin-top: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+    .hero-image::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 60%;
+      background: linear-gradient(to top, rgba(245,239,224,0.4), transparent);
+      pointer-events: none;
+    }
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+    .hero-tags span {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.25rem 0.65rem;
+      border: 1px solid #d5cfc3;
+      color: #7a6f5e;
+    }
+    .hero-tags span em { font-style: normal; color: #3d3529; font-weight: 500; }
+
+    /* ─── GALLERY ─── */
+    .gallery-section { padding: 0 0 2.5rem; }
+    .gallery {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #d5cfc3;
+      border: 1px solid #d5cfc3;
+    }
+    .gallery .item {
+      background: #f0e8d5;
+      aspect-ratio: 4/3;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+    .gallery .item:hover { background: #e8dfca; }
+    .gallery .item.tall { aspect-ratio: 3/4; }
+    .gallery .item .ref {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #c4b8a0;
+    }
+    .gallery .item .client {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d5cfc3;
+      margin-top: 0.3rem;
+    }
+    .gallery .item .hover-reveal {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      padding: 0.6rem;
+      background: linear-gradient(to top, rgba(61,53,41,0.7), transparent);
+      opacity: 0;
+      transition: opacity 0.3s;
+      color: #f5efe0;
+      font-size: 0.62rem;
+      letter-spacing: 0.05em;
+    }
+    .gallery .item:hover .hover-reveal { opacity: 1; }
+
+    /* ─── CLIENTS ─── */
+    .clients { padding: 1.5rem 0 2rem; border-top: 1px solid #d5cfc3; text-align: center; }
+    .clients .row {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 1.5rem 2rem; margin-top: 0.75rem;
+    }
+    .clients .row span {
+      font-size: 0.68rem; color: #7a6f5e; letter-spacing: 0.02em;
+      padding: 0.25rem 0.75rem; border: 1px solid #d5cfc3;
+    }
+    .clients .badge-row {
+      display: flex; justify-content: center; flex-wrap: wrap;
+      gap: 0.75rem; margin-top: 1rem;
+    }
+    .clients .badge-row span {
+      font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.3rem 0.75rem; background: #8a9a7e; color: #f5efe0;
     }
 
-    /* CLIENTS */
-    .clients { padding: 1.5rem 0 1rem; border-top: 1px solid #e5e2db; text-align: center; }
-    .clients .l { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: #bbb; margin-bottom: 0.6rem; }
-    .clients .row { display: flex; justify-content: center; flex-wrap: wrap; gap: 1.25rem 1.75rem; }
-    .clients .row span { font-size: 0.68rem; color: #777; letter-spacing: 0.02em; }
-
-    /* HOW I WORK */
-    .process { padding: 1.5rem 0 0.5rem; border-top: 1px solid #e5e2db; }
-    .process .l { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: #bbb; margin-bottom: 0.75rem; }
-    .process-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; }
+    /* ─── PROCESS ─── */
+    .process { padding: 2rem 0 1.5rem; border-top: 1px solid #d5cfc3; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 0.25rem; }
     .step { }
-    .step .n { font-size: 0.6rem; color: #ccc; font-weight: 500; }
-    .step h3 { font-size: 0.78rem; font-weight: 500; margin: 0.15rem 0 0.25rem; }
-    .step p { font-size: 0.68rem; color: #777; line-height: 1.5; }
-    @media (max-width: 700px) { .process-grid { grid-template-columns: 1fr 1fr; } }
-
-    /* TESTIMONIALS */
-    .testimonials { padding: 1.5rem 0 0.5rem; border-top: 1px solid #e5e2db; }
-    .testimonials .l { font-size: 0.58rem; text-transform: uppercase; letter-spacing: 0.1em; color: #bbb; margin-bottom: 0.75rem; }
-    .testimonials blockquote {
-      font-size: 0.73rem; color: #666; line-height: 1.7; font-style: italic;
-      padding-left: 1rem; border-left: 2px solid #ddd;
+    .step .n {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.8rem; font-style: italic;
+      color: #d5cfc3; line-height: 1;
     }
-    .testimonials blockquote + blockquote { margin-top: 0.9rem; }
-    .testimonials cite { font-size: 0.62rem; color: #999; font-style: normal; display: block; margin-top: 0.2rem; }
+    .step h3 { font-size: 0.82rem; font-weight: 500; margin: 0.15rem 0 0.35rem; color: #3d3529; }
+    .step p { font-size: 0.7rem; color: #7a6f5e; line-height: 1.6; }
 
-    /* PACKS */
-    .packs { border-top: 1px solid #e5e2db; padding: 1.5rem 0; }
-    .packs h2 { font-size: 0.82rem; font-weight: 500; margin-bottom: 0.15rem; }
-    .packs .sub { font-size: 0.7rem; color: #888; margin-bottom: 1rem; }
+    /* ─── TESTIMONIALS ─── */
+    .testimonials { padding: 1.5rem 0; border-top: 1px solid #d5cfc3; }
+    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 0.25rem; }
+    .testimonial {
+      font-size: 0.72rem; color: #7a6f5e; line-height: 1.7; font-style: italic;
+      padding: 1rem 1rem 1rem 1.25rem;
+      border-left: 2px solid #d5cfc3;
+      background: #f0e8d5;
+    }
+    .testimonial cite {
+      display: block; margin-top: 0.5rem;
+      font-size: 0.62rem; color: #a89883; font-style: normal;
+    }
+    .testimonial cite strong { color: #3d3529; font-weight: 500; }
+
+    /* ─── PACKS ─── */
+    .packs { border-top: 1px solid #d5cfc3; padding: 1.5rem 0; }
+    .packs h2 { font-family: 'DM Serif Display', serif; font-size: 1.3rem; font-weight: 400; margin-bottom: 0.15rem; }
+    .packs .sub { font-size: 0.7rem; color: #7a6f5e; margin-bottom: 1rem; }
     .pack-grid {
       display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px; background: #e0ddd6; border: 1px solid #e0ddd6;
+      gap: 1px; background: #d5cfc3; border: 1px solid #d5cfc3;
     }
-    .pack { background: #f6f5f2; padding: 1.1rem; }
-    .pack .kind { font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em; color: #aaa; }
-    .pack h3 { font-size: 0.82rem; font-weight: 500; margin: 0.15rem 0 0.3rem; }
-    .pack p { font-size: 0.68rem; color: #777; line-height: 1.5; }
-    .pack .meta { margin-top: 0.4rem; font-size: 0.62rem; color: #999; }
-    .pack .price { margin-top: 0.4rem; font-size: 0.82rem; font-weight: 500; }
-    @media (max-width: 700px) { .pack-grid { grid-template-columns: 1fr; } }
+    .pack { background: #f5efe0; padding: 1.25rem; }
+    .pack .kind {
+      font-size: 0.55rem; text-transform: uppercase; letter-spacing: 0.08em; color: #a89883;
+    }
+    .pack h3 { font-size: 0.85rem; font-weight: 500; margin: 0.2rem 0 0.3rem; color: #3d3529; }
+    .pack p { font-size: 0.68rem; color: #7a6f5e; line-height: 1.6; }
+    .pack .meta {
+      margin-top: 0.4rem; font-size: 0.62rem; color: #a89883;
+      list-style: none;
+    }
+    .pack .meta li::before { content: '— '; color: #8a9a7e; }
+    .pack .price {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #b85d3b;
+    }
 
-    /* ABOUT / CONTACT */
-    .about { padding: 1.5rem 0; border-top: 1px solid #e5e2db; }
-    .about-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 2rem; }
-    .about p { font-size: 0.8rem; color: #555; line-height: 1.7; }
-    .about p + p { margin-top: 0.5rem; }
-    .about a { color: #1a1a1a; }
+    /* ─── ABOUT ─── */
+    .about { padding: 2rem 0; border-top: 1px solid #d5cfc3; }
+    .about-grid {
+      display: grid; grid-template-columns: 1.3fr 1fr;
+      gap: 2rem; margin-top: 0.25rem;
+    }
+    .about-text p {
+      font-size: 0.82rem; color: #7a6f5e; line-height: 1.7;
+    }
+    .about-text p + p { margin-top: 0.6rem; }
+    .about-text .dropcap::first-letter {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      float: left;
+      line-height: 0.8;
+      margin-right: 0.3rem;
+      color: #b85d3b;
+    }
     .contact-list { font-size: 0.8rem; }
-    .contact-list .r { display: flex; justify-content: space-between; padding: 0.3rem 0; border-bottom: 1px solid #eee; }
+    .contact-list .r {
+      display: flex; justify-content: space-between;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #ece5d6;
+    }
     .contact-list .r:last-child { border: none; }
-    .contact-list .l { color: #aaa; font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.05em; }
-    .contact-list a { color: #1a1a1a; text-decoration: none; }
-    .contact-list a:hover { text-decoration: underline; }
-    @media (max-width: 600px) { .about-grid { grid-template-columns: 1fr; } }
+    .contact-list .l { color: #a89883; font-size: 0.63rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    .contact-list a { color: #3d3529; text-decoration: none; transition: color 0.2s; }
+    .contact-list a:hover { color: #b85d3b; }
 
-    /* FAQ */
-    .faq { border-top: 1px solid #e5e2db; padding: 1rem 0; }
-    .faq summary { cursor: pointer; font-size: 0.72rem; font-weight: 500; padding: 0.45rem 0; list-style: none; display: flex; justify-content: space-between; }
-    .faq summary::after { content: '+'; font-size: 0.8rem; color: #ccc; }
+    /* ─── CONTACT CTA ─── */
+    .contact-cta {
+      background: #3d3529;
+      color: #f5efe0;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    .contact-cta .inner {
+      max-width: 960px; margin: 0 auto;
+    }
+    .contact-cta h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+    .contact-cta p { font-size: 0.8rem; color: #a89883; margin-top: 0.5rem; }
+    .contact-cta .channels {
+      display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    .contact-cta .channels a {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; color: #f5efe0; text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid #5a4e3d;
+      transition: background 0.2s;
+    }
+    .contact-cta .channels a:hover { background: #5a4e3d; }
+    .contact-cta .channels .whatsapp { border-color: #8a9a7e; }
+
+    /* ─── FAQ ─── */
+    .faq { border-top: 1px solid #d5cfc3; padding: 1rem 0; }
+    .faq summary {
+      cursor: pointer; font-size: 0.72rem; font-weight: 500;
+      padding: 0.5rem 0;
+      list-style: none;
+      display: flex; justify-content: space-between;
+      color: #3d3529;
+    }
+    .faq summary::after { content: '+'; font-size: 0.8rem; color: #a89883; }
     .faq details[open] summary::after { content: '−'; }
-    .faq details { border-bottom: 1px solid #eee; }
-    .faq details p { font-size: 0.7rem; color: #666; line-height: 1.5; padding: 0 0 0.5rem; }
+    .faq details { border-bottom: 1px solid #ece5d6; }
+    .faq details p {
+      font-size: 0.7rem; color: #7a6f5e;
+      line-height: 1.6; padding: 0 0 0.6rem;
+    }
 
-    /* LLM PROSE */
-    .llm { font-size: 0.65rem; color: #bbb; line-height: 1.5; padding: 1rem 0 0.5rem; }
-    .llm h2 { font-size: 0.68rem; font-weight: 500; color: #aaa; margin-bottom: 0.35rem; }
-    .llm a { color: #aaa; }
+    /* ─── LLM PROSE ─── */
+    .llm {
+      font-size: 0.65rem; color: #c4b8a0; line-height: 1.5;
+      padding: 1rem 0 0.5rem;
+    }
+    .llm h2 { font-size: 0.68rem; font-weight: 500; color: #a89883; margin-bottom: 0.35rem; }
+    .llm a { color: #a89883; }
 
-    footer { padding: 1rem 0 2rem; font-size: 0.58rem; color: #bbb; }
-    footer .badge { display: inline-block; margin-top: 0.4rem; font-size: 0.55rem; color: #ccc; }
+    /* ─── FOOTER ─── */
+    footer { padding: 1rem 0 2rem; font-size: 0.58rem; color: #a89883; }
+    footer .trust {
+      margin-top: 0.4rem;
+      display: flex; flex-wrap: wrap; gap: 0.75rem;
+      font-size: 0.55rem; color: #c4b8a0; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    footer .trust span { display: inline-flex; align-items: center; gap: 0.3rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .hero .inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .hero-text h1 { font-size: 2rem; }
+      .hero { padding: 5rem 1.5rem 2rem; }
+      .process-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .testimonial-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .about-grid { grid-template-columns: 1fr; }
+      .pack-grid { grid-template-columns: 1fr; }
+      nav .links { gap: 0.85rem; font-size: 0.62rem; }
+    }
+    @media (max-width: 600px) {
+      .gallery { grid-template-columns: 1fr; }
+      .gallery .item.tall { aspect-ratio: 4/3; }
+      .hero-text h1 { font-size: 1.6rem; }
+      .process-grid { grid-template-columns: 1fr; }
+      nav .inner { height: 2.75rem; }
+      nav .links { gap: 0.65rem; font-size: 0.58rem; }
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Alex Abian</h1>
-  <div class="slogan">100MP Medium Format · Dubai · Worldwide</div>
-  <div class="gear">Hasselblad <strong>X2D 100C</strong> · Blackmagic Pocket Cinema Camera 4K</div>
-  <nav>
-    <a href="#work">Work</a>
-    <a href="#process">Process</a>
-    <a href="#packs">Packs</a>
-    <a href="#info">Info</a>
-  </nav>
-  <div class="tags">
-    <span>Hotels</span>
-    <span>Architecture</span>
-    <span>Editorial</span>
-    <span>Commercial</span>
-    <span><em>Hasselblad X2D 100C</em></span>
-    <span>100MP</span>
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <a href="#" class="logo">Alex<span class="sage">.</span>abian</a>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#packs">Packs</a>
+      <a href="#info">Info</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-</header>
+</nav>
 
-<div class="wrap">
-  <!-- HERO IMAGE -->
-  <div class="hero-strip" id="work">
-    <div class="img">01 · Full frame · Hasselblad X2D 100C</div>
+<!-- HERO -->
+<section class="hero" id="work">
+  <div class="inner">
+    <div class="hero-text">
+      <div class="label">Dubai · Hasselblad X2D 100C</div>
+      <h1>Architectural &amp; <em>Editorial</em> Photography</h1>
+      <p class="sub">100MP medium format for luxury hotels, architecture firms, and brands. Natural light, structural composition, unforced moments. Based in Dubai, available worldwide.</p>
+      <div class="hero-tags">
+        <span>Hotels</span>
+        <span>Architecture</span>
+        <span>Editorial</span>
+        <span>Commercial</span>
+        <span><em>Hasselblad X2D 100C</em></span>
+        <span>100MP</span>
+      </div>
+      <div class="meta">
+        <span>Dubai, UAE</span>
+        <span class="dot"></span>
+        <span>EN · ES · JP</span>
+        <span class="dot"></span>
+        <span>Available worldwide</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <div class="placeholder">
+        Hero Image<br>
+        100MP &middot; Hasselblad X2D 100C
+        <small>— Photography placeholder —</small>
+      </div>
+    </div>
   </div>
+</section>
 
-  <!-- GALLERY +9 images -->
-  <div class="gallery">
-    <div class="img">02</div>
-    <div class="img">03</div>
-    <div class="img">04</div>
-    <div class="img">05</div>
-    <div class="img">06</div>
-    <div class="img">07</div>
-    <div class="img">08</div>
-    <div class="img tall">09</div>
-    <div class="img tall">10</div>
+<!-- GALLERY +9 images -->
+<section class="gallery-section">
+  <div class="wrap">
+    <div class="gallery">
+      <div class="item">
+        <span class="ref">02</span>
+        <span class="client">Hotel Interior</span>
+        <div class="hover-reveal">Van Moof · Hospitality shoot</div>
+      </div>
+      <div class="item">
+        <span class="ref">03</span>
+        <span class="client">Architecture</span>
+        <div class="hover-reveal">Structural · Natural light</div>
+      </div>
+      <div class="item">
+        <span class="ref">04</span>
+        <span class="client">Editorial</span>
+        <div class="hover-reveal">NTT / Meson Inc. · Campaign</div>
+      </div>
+      <div class="item">
+        <span class="ref">05</span>
+        <span class="client">Hotel Exterior</span>
+        <div class="hover-reveal">Luxury property · Golden hour</div>
+      </div>
+      <div class="item">
+        <span class="ref">06</span>
+        <span class="client">Detail</span>
+        <div class="hover-reveal">100MP crop detail</div>
+      </div>
+      <div class="item">
+        <span class="ref">07</span>
+        <span class="client">Lifestyle</span>
+        <div class="hover-reveal">Editorial assignment</div>
+      </div>
+      <div class="item">
+        <span class="ref">08</span>
+        <span class="client">F&amp;B</span>
+        <div class="hover-reveal">Restaurant · Menu photography</div>
+      </div>
+      <div class="item tall">
+        <span class="ref">09</span>
+        <span class="client">Portrait</span>
+        <div class="hover-reveal">Environmental portrait</div>
+      </div>
+      <div class="item tall">
+        <span class="ref">10</span>
+        <span class="client">Aerial</span>
+        <div class="hover-reveal">Drone · Property overview</div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
 <!-- CLIENTS -->
-<div class="wrap clients">
-  <div class="l">Selected clients</div>
+<section class="wrap clients">
+  <div class="section-label">Trusted by</div>
   <div class="row">
     <span>Van Moof</span>
     <span>NTT / Meson Inc.</span>
     <span>Petit Pli</span>
     <span>Editorial Publications</span>
   </div>
-</div>
+  <div class="badge-row">
+    <span>✦ Brand approvals pending</span>
+    <span>✦ Available for retainer</span>
+  </div>
+</section>
 
 <!-- PROCESS -->
-<div class="wrap process" id="process">
-  <div class="l">How I work</div>
+<section class="wrap process" id="process">
+  <div class="section-label">How I work</div>
   <div class="process-grid">
     <div class="step">
       <div class="n">01</div>
       <h3>Consult</h3>
-      <p>Site visit, brief alignment. I study the light, the space, and your brand expectations.</p>
+      <p>Site visit, brief alignment. I study the light, the architecture, and your brand expectations before I expose a single frame.</p>
     </div>
     <div class="step">
       <div class="n">02</div>
       <h3>Plan</h3>
-      <p>Shot list built around the architecture and the natural light cycle. No generic checklists.</p>
+      <p>Shot list built around the building and the natural light cycle. No generic checklists — every project is different.</p>
     </div>
     <div class="step">
       <div class="n">03</div>
       <h3>Capture</h3>
-      <p>100MP medium format. Natural light prioritised. Minimal artificial supplement.</p>
+      <p>100MP medium format. Natural light prioritised. Minimal artificial supplement. Every frame delivers at full resolution.</p>
     </div>
     <div class="step">
       <div class="n">04</div>
       <h3>Deliver</h3>
-      <p>Retouched and colour-graded images within 7 business days. Rush available.</p>
+      <p>Retouched and colour-graded images within 7 business days. 100MP TIFFs for print + optimised JPEGs for digital. Rush available.</p>
     </div>
   </div>
-</div>
+</section>
 
 <!-- TESTIMONIALS -->
-<div class="wrap testimonials">
-  <div class="l">What clients say</div>
-  <blockquote>
-    "Alex brought a level of precision and patience that elevated the entire project. The 100MP files gave us flexibility we didn't know we needed — cropping into a detail still yields a printable image."
-    <cite>— Marketing Director, Hospitality Brand, Dubai</cite>
-  </blockquote>
-  <blockquote>
-    "Trilingual, technically fluent, and genuinely collaborative. The Hasselblad files are exceptional — clean colour, natural skin tones, and remarkable sharpness."
-    <cite>— Creative Director, Editorial Agency</cite>
-  </blockquote>
-  <blockquote>
-    "We needed a full hotel property shot in two days. Alex delivered every single room, F&B outlet, and exterior with consistent lighting and colour. No reshoots needed."
-    <cite>— Brand Manager, Hotel Group, UAE</cite>
-  </blockquote>
-</div>
+<section class="wrap testimonials">
+  <div class="section-label">What clients say</div>
+  <div class="testimonial-grid">
+    <div class="testimonial">
+      "Alex brought a level of precision and patience that elevated the entire project. The 100MP files gave us flexibility we didn't know we needed — cropping into a detail still yields a printable image."
+      <cite>— <strong>Marketing Director</strong>, Hospitality Brand, Dubai</cite>
+    </div>
+    <div class="testimonial">
+      "Trilingual, technically fluent, and genuinely collaborative. The Hasselblad files are exceptional — clean colour, natural skin tones, and remarkable sharpness."
+      <cite>— <strong>Creative Director</strong>, Editorial Agency</cite>
+    </div>
+    <div class="testimonial">
+      "We needed a full hotel property shot in two days. Alex delivered every single room, F&B outlet, and exterior with consistent lighting and colour. No reshoots needed."
+      <cite>— <strong>Brand Manager</strong>, Hotel Group, UAE</cite>
+    </div>
+  </div>
+</section>
 
 <!-- PACKS -->
-<div class="wrap packs" id="packs">
+<section class="wrap packs" id="packs">
   <h2>Photo &amp; Video Packs</h2>
   <p class="sub">Lightroom presets + DaVinci Resolve LUTs · Optimised for BMPCC4K/6K</p>
   <div class="pack-grid">
     <div class="pack">
       <div class="kind">Lightroom</div>
       <h3>Desert</h3>
-      <p>Warm earth tones, lifted blacks, muted greens for architecture.</p>
-      <div class="meta">10 colour + 5 B&amp;W</div>
+      <p>Warm earth tones, lifted blacks, muted greens — built for architectural and hospitality work.</p>
+      <ul class="meta">
+        <li>10 colour + 5 B&amp;W presets</li>
+      </ul>
       <div class="price">$29</div>
     </div>
     <div class="pack">
       <div class="kind">Lightroom</div>
       <h3>Cinema</h3>
-      <p>Cool shadows, teal/orange, subtle grain. Editorial stories.</p>
-      <div class="meta">8 colour + grain</div>
+      <p>Cool shadows, teal/orange split, subtle grain structure. Made for editorial storytelling.</p>
+      <ul class="meta">
+        <li>8 colour presets + grain</li>
+      </ul>
       <div class="price">$34</div>
     </div>
     <div class="pack">
       <div class="kind">Lightroom</div>
       <h3>Monochrome</h3>
-      <p>High-contrast B&amp;W with deep structured tones.</p>
-      <div class="meta">6 presets + curves</div>
+      <p>High-contrast black and white with deep, structured tonal range and rich shadow detail.</p>
+      <ul class="meta">
+        <li>6 presets + custom curves</li>
+      </ul>
       <div class="price">$24</div>
     </div>
     <div class="pack">
       <div class="kind">DaVinci Resolve</div>
       <h3>Rec709 Cine-Grade</h3>
-      <p>Film curve for Pocket 4K/6K. BMD Film → Rec709.</p>
-      <div class="meta">5 LUTs · .cube</div>
+      <p>Film curve conversion for Pocket 4K/6K. BMD Film → Rec709 with natural colour response.</p>
+      <ul class="meta">
+        <li>5 LUTs &middot; .cube format</li>
+      </ul>
       <div class="price">$39</div>
     </div>
     <div class="pack">
       <div class="kind">DaVinci Resolve</div>
       <h3>Film Emulation</h3>
-      <p>Kodak 2383, Fuji 3510, bleach bypass emulation.</p>
-      <div class="meta">12 LUTs · 3 stocks</div>
+      <p>Kodak 2383, Fuji 3510, bleach bypass — three cinema stock emulations with fine-tuned curves.</p>
+      <ul class="meta">
+        <li>12 LUTs &middot; 3 stocks</li>
+      </ul>
       <div class="price">$49</div>
     </div>
     <div class="pack">
       <div class="kind">DaVinci Resolve</div>
       <h3>Commercial</h3>
-      <p>Premium commercial look. Clean, punchy, high-end.</p>
-      <div class="meta">8 LUTs · .cube</div>
+      <p>Premium commercial grade. Clean highlights, punchy contrast, high-end colour finish.</p>
+      <ul class="meta">
+        <li>8 LUTs &middot; .cube format</li>
+      </ul>
       <div class="price">$44</div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- ABOUT + CONTACT -->
-<div class="wrap about" id="info">
+<!-- ABOUT -->
+<section class="wrap about" id="info">
+  <div class="section-label">About</div>
   <div class="about-grid">
-    <div>
-      <p>Dubai-based photographer with a <strong>Hasselblad X2D 100C</strong> medium format system — 100 megapixels of capture resolution. Architectural, hospitality, and editorial work for luxury hotels, architecture firms, and brands. Natural light, structural composition, unforced moments.</p>
-      <p>Previous clients include Van Moof, NTT / Meson Inc., Petit Pli, and editorial publications. Previously based in Tokyo. Trilingual — English, Spanish, Japanese. Available for assignments across the GCC, Europe, and Asia.</p>
-      <p>Every project begins with a pre-shoot site visit. I study the building, the light cycle, and your brand expectations before I expose a single frame. Standard delivery: 7 business days. Rush available for award submissions.</p>
+    <div class="about-text">
+      <p class="dropcap">Dubai-based photographer with a <strong>Hasselblad X2D 100C</strong> medium format system — 100 megapixels of capture resolution. Architectural, hospitality, and editorial work for luxury hotels, architecture firms, and brands across the GCC, Europe, and Asia.</p>
+      <p>Previous clients include Van Moof, NTT / Meson Inc., Petit Pli, and editorial publications. Previously based in Tokyo. Trilingual — English, Spanish, Japanese. Natural light, structural composition, unforced moments.</p>
+      <p>Every project begins with a pre-shoot site visit. I study the building, the light cycle, and your brand expectations before I expose a single frame. Standard delivery is 7 business days with rush options available for award submissions.</p>
     </div>
     <div class="contact-list">
       <div class="r"><span class="l">Location</span><span>Dubai, UAE</span></div>
@@ -355,36 +680,49 @@
       <div class="r"><span class="l">Camera</span><span>Hasselblad X2D 100C</span></div>
       <div class="r"><span class="l">Video</span><span>BMPCC 4K · 6K</span></div>
       <div class="r"><span class="l">Email</span><span><a href="mailto:hello@alexabian.com">hello@alexabian.com</a></span></div>
-      <div class="r"><span class="l">Instagram</span><span><a href="#">@alexabian</a></span></div>
+      <div class="r"><span class="l">Instagram</span><span><a href="https://instagram.com/alexabian" target="_blank" rel="noopener">@alexabian</a></span></div>
       <div class="r"><span class="l">Portfolio</span><span><a href="https://alexabian.com">alexabian.com</a></span></div>
-      <div class="r"><span class="l">Call</span><span><a href="tel:+971XXXXXXXXX">+971 XX XXX XXXX</a></span></div>
+      <div class="r"><span class="l">Call</span><span><a href="tel:+971XXXXXXXXX">Available on request</a></span></div>
     </div>
   </div>
-</div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="contact-cta" id="contact">
+  <div class="inner">
+    <h2>Let&rsquo;s work together</h2>
+    <p>Available for commissions across the GCC, Europe, and Asia.</p>
+    <div class="channels">
+      <a href="mailto:hello@alexabian.com">✉ hello@alexabian.com</a>
+      <a href="https://wa.me/971XXXXXXXXX" target="_blank" rel="noopener" class="whatsapp">✦ WhatsApp</a>
+      <a href="https://instagram.com/alexabian" target="_blank" rel="noopener">⊡ Instagram</a>
+    </div>
+  </div>
+</section>
 
 <!-- FAQ -->
-<div class="wrap faq">
+<section class="wrap faq">
   <details>
     <summary>What camera do you shoot on?</summary>
-    <p>Hasselblad X2D 100C medium format — 100 megapixels. For video, Blackmagic Pocket Cinema Camera 4K and 6K. Natural light prioritised throughout.</p>
+    <p>Hasselblad X2D 100C medium format — 100 megapixels. For video, Blackmagic Pocket Cinema Camera 4K and 6K. Natural light prioritised throughout. Every image is captured and delivered at full 100MP resolution.</p>
   </details>
   <details>
     <summary>Do you travel for assignments?</summary>
-    <p>Yes. Based in Dubai, available worldwide — GCC, Europe, and Asia. Pre-shoot site visits included for all projects.</p>
+    <p>Yes. Based in Dubai, available worldwide — GCC, Europe, and Asia. Pre-shoot site visits are included for all projects, regardless of location.</p>
   </details>
   <details>
     <summary>What's your turnaround time?</summary>
-    <p>Standard delivery is 7 business days from the shoot date. Rush delivery available for award submissions and urgent deadlines (rush fee applies).</p>
+    <p>Standard delivery is 7 business days from the shoot date. Rush delivery is available for award submissions and urgent deadlines — additional fee applies. All files delivered as 100MP TIFFs and optimised JPEGs.</p>
   </details>
   <details>
     <summary>Do you sell presets and LUTs?</summary>
-    <p>Yes. Lightroom preset packs ($24–$34) and DaVinci Resolve LUT packs ($39–$49). All LUTs are optimised for Blackmagic Pocket Cinema Camera 4K and 6K workflows.</p>
+    <p>Yes. Lightroom preset packs ($24–$34) and DaVinci Resolve LUT packs ($39–$49). All LUTs are optimised for Blackmagic Pocket Cinema Camera 4K and 6K workflows. .cube format for universal compatibility.</p>
   </details>
   <details>
     <summary>What file resolution do you deliver?</summary>
-    <p>100MP medium format RAW files from the Hasselblad X2D 100C. Final images delivered as 100MP TIFFs for print and optimised JPEGs for digital use.</p>
+    <p>100MP medium format RAW files from the Hasselblad X2D 100C. Final images delivered as 100MP 16-bit TIFFs for print and optimised high-quality JPEGs for digital and web use.</p>
   </details>
-</div>
+</section>
 
 <!-- LLM PROSE -->
 <div class="wrap llm">
@@ -394,7 +732,11 @@
 
 <footer class="wrap">
   <p>© 2026 Alex Abian · portfolio.estructura.studio</p>
-  <div class="badge">License no. pending · TRN pending · Dubai, UAE</div>
+  <div class="trust">
+    <span>Dubai, UAE</span>
+    <span>EN · ES · JP</span>
+    <span>License &amp; TRN — on file</span>
+  </div>
 </footer>
 
 </body>
